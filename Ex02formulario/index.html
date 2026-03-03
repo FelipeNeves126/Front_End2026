@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KanBan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>KanBan</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="mostrarSecao('historia')">HISTÓRIA</a></li>
+                <li><a href="#" onclick="mostrarSecao('funcionamento')">FUNCIONAMENTO</a></li>
+                <li><a href="#" onclick="mostrarSecao('aplicacao')">APLICAÇÃO</a></li>
+                <li><a href="#" onclick="mostrarSecao('questionario')">QUESTIONÁRIO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <article id="historia">
+        <h1>HISTÓRIA</h1>
+        <h2>Origem</h2>
+        <p>O Kanban surgiu no período pós-Segunda Guerra Mundial. O Japão precisava reorganizar e reestruturar sua indústria com os poucos recursos disponíveis. Além disso, naquele momento, o país não conseguia competir com o modelo de produção em massa adotado pelas indústrias americanas. Diante desse cenário, tornou-se necessário o desenvolvimento de um sistema mais eficiente, inteligente e econômico.</p>
+        <figure>
+                <img src="imagens/japao-pos-guerra.jpg" alt="Japão pós-guerra" width="400px">
+        </figure>
+        <h2>O criador</h2>
+        <p>Nesse contexto, o engenheiro da Toyota, <span>Taiichi Ohno</span>, inspirou-se no funcionamento dos supermercados americanos. Ele observou que os produtos nas prateleiras eram repostos apenas quando eram retirados pelos clientes. Esse conceito simples revelou a lógica de um sistema de produção baseado na demanda real, evitando desperdícios e excesso de estoque. Assim nasceu o sistema Kanban, que se tornou um dos pilares do Sistema Toyota de Produção.</p>
+        <figure>
+            <img src="imagens/taiichi-ohno.jpg" alt="Taiichi Ohno" width="400px">
+        </figure>
+        <h2>o Significado</h2>
+        <p>A palavra KanBan vem do japones e significa "cartão" ou "placa visual". Originalmente, eram cartões físicos utilizados para sinalizar a necessidade de reposição de peças ou materiais dentro da fábrica.</p>
+    </article>
+    <article id="funcionamento">
+        <h1>FUNCIONAMENTO</h1>
+        <h2>Funcionamento</h2>
+        <p>O kanban é um sistema que consiste em separar as atividades propostas em <strong>3 categorias</strong>, que geralmente são:</p>
+        <ol>
+            <li>A fazer</li>
+            <p>Categoria que lista tarefas que ainda precisam ser realizadas e ainda não foram inciadas.</p>
+            <li>Em andamento</li>
+            <p>Categoria que lista tarefas em andamento atualmente, mas que ainda não foram finalizadas.</p>
+            <li>Concluído</li>
+            <p>Categoria que lista tarefas já concluídas, o que auxilía no controle do andamento do projeto.</p>
+        </ol>
+        <figure>
+            <img src="imagens/exemplo-kanban.jpg" alt="Exemplo de KanBan" width="400px">
+        </figure>
+        <h2>Limite de WIP</h2>
+        <p>Uma parte importante do funcionamento do KanBan é o chamado <strong>limite de WIP</strong>, uma regra que define quantas tarefas podem estar em andamento ao mesmo tempo em uma determinada etapa do processo.</p>
+        <p>A adoção dessa regra previne a equipe de ficar sobrecarregada com várias taregas ao mesmo tempo, travando o progresso do projeto e evidenciando possíveis problemas no projeto com mais clareza.</p>  
+        <h2>Fluxo Contínuo</h2>
+        <p>Atrelado à isso, o fluxo contínuo é o princípio de manter as tarefas se movendo constantemente pelo processo, evitando travamentos durante e entre as tarefas. A ideia é não trabalhar em grandes lotes, mas sim fazer uma tarefa fluir do início ao fim da forma mais estável e previsível possível.</p>
+        <p>Como numa linha de produção contínua: se uma etapa trava, tudo fica travado atrás dela e tudo se atrasa após ela.</p>
+    </article>
+    <article id="aplicacao">
+        <h1>APLICAÇÃO</h1>
+        <h2>Porque usar?</h2>
+        <p>Fazer o uso desse sistema trás diversos benefícios para a equipe e para o projeto:</p>
+        <ul>
+            <li>Organização visual;</li>
+            <li>Aumento de produtividade;</li>
+            <li>Redução de sobrecarga;</li>
+            <li>Melhor gestão de tempo.</li>
+        </ul>
+        <figure>
+            <img src="imagens/exemplo-kanban-2.jpg" alt="Exemplo de Kanban" width="400px">
+        </figure>
+        <h2>Uso na área de TI</h2>
+        <p>A área de Ti, em geral, aceitou e se adaptou muito bem ao uso do KanBan para realização de projetos, principalmente inserido nas metodologias ágeis, com uma integração com o Scrum e outras ferramentas, como:</p>
+        <ul>
+            <li>Trello;</li>
+            <li>Jira;</li>
+            <li>Azure Devops;</li>
+            <li>Notion.</li>
+        </ul>
+        <figure>
+            <img src="imagens/metodologia-agil.jpg" alt="Metodologias Agéis" width="400px">
+        </figure>
+    </article>
+    <article id="questionario">
+        <h1>QUESTIONÁRIO</h1>
+        <h2>Vamos testar os conhecimentos adquiridos por você nesse informativo!</h2>
+
+        <form>
+            <label for="name" >NOME:</label>
+            <input type="text" id="nome" name="nome">
+            <p></p>
+            
+            <fieldset data-pergunta="pergunta1">
+                <legend>
+                    1: Quem foi o principal responsável pelo desenvolvimento do sistema KanBan?
+                </legend>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta1" value="ohno">
+                    Taiichi Ohno
+                </label>
+                
+                <label class="opcao">
+                    <input type="radio" name="pergunta1" value="ferrari">
+                    Enzo Ferrari
+                </label>
+                
+                <label class="opcao">
+                    <input type="radio" name="pergunta1" value="toyoda">
+                    Kiichiro Toyoda
+                </label>
+            </fieldset>
+
+            <fieldset data-pergunta="pergunta2">
+                <legend>
+                    2:Qual era o objetivo dessa criação?
+                </legend>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta2" value="dominancia">
+                    Dominância da produção mundial
+                </label>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta2" value="reeguer">
+                    Se reeguer em um período de dificuldades logísticas
+                </label>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta2" value="revolucionar">
+                    Revolucionar a forma mundial de produção de itens
+                </label>
+            </fieldset>
+
+            <fieldset data-pergunta="pergunta3">
+                <legend>
+                    3:Qual seria a definição que melhor se refere ao limite de WIP?
+                </legend>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta3" value="capacidade">
+                    Conhecer a capacidade da equipe de produção e não sobrecarregá-la
+                </label>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta3" value="norma">
+                    Norma trabalhista que proibi trabalho escravo
+                </label>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta3" value="quantidade">
+                    Determinação de quantas atividades deveram ser realizadas ao mesmo tempo
+                </label>
+            </fieldset>
+
+            <fieldset data-pergunta="pergunta4">
+                <legend>
+                    4:Geralmente, em quais etapas são usualmente dividos um KanBan?
+                </legend>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta4" value="terminados">
+                    Terminados, Desistidos, Nem Olhei ainda
+                </label>
+                
+                <label class="opcao">
+                    <input type="radio" name="pergunta4" value="a fazer">
+                    A fazer, Em andamento, concluido
+                </label>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta4" value="scrum">
+                    Scrum, WIP, Notion
+                </label>
+            </fieldset>
+
+            <fieldset data-pergunta="pergunta5">
+                <legend>
+                    5: Qual desses não é um benefício de se utilizar o KanBan?                
+                </legend>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta5" value="organizacao">
+                    Organização visual
+                </label>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta5" value="reducao">
+                    Reducao de sobrecarga
+                </label>
+
+                <label class="opcao">
+                    <input type="radio" name="pergunta5" value="ferias">
+                    Férias extendidas
+                </label>
+            </fieldset>
+
+            <button type="reset" id="cancelar">Cancelar</button>
+            <button type="submit">Enviar</button>
+            <p id="resultado"></p>
+        </form>
+
+    </article>
+
+    <script>
+        function mostrarSecao(id) {
+            const secoes = document.querySelectorAll("article");
+            secoes.forEach(secao => {
+                secao.classList.remove("ativo");
+                limparQuestionario();
+            });
+
+            const secaoSelecionada = document.getElementById(id);
+            secaoSelecionada.classList.add("ativo");
+        }
+
+        document.addEventListener("DOMContentLoaded", function() { 
+            mostrarSecao("historia");
+        });
+
+        const header = document.querySelector("header");
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 100) {
+                header.classList.add("shrink");
+            } else {
+                header.classList.remove("shrink");
+            }
+        });
+
+        const form = document.querySelector("form");
+        const resultado = document.getElementById("resultado");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let pontos = 0;
+
+            const respostasCorretas = {
+                pergunta1: "ohno",
+                pergunta2: "reeguer",
+                pergunta3: "quantidade",
+                pergunta4: "a fazer",
+                pergunta5: "ferias"
+            };
+
+            document.querySelectorAll("label").forEach(label => {
+                label.classList.remove("correta", "errada");
+            });
+
+            for (let pergunta in respostasCorretas) {
+                const opcoes = document.querySelectorAll(`input[name="${pergunta}"]`);
+
+                opcoes.forEach(opcao => {
+                    const label = opcao.parentElement;
+
+                    if(opcao.value === respostasCorretas[pergunta]){
+                        label.classList.add("correta");
+                    }
+
+                    if(opcao.checked && opcao.value !== respostasCorretas[pergunta]) {
+                        label.classList.add("errada");
+                    }
+
+                    if(opcao.checked && opcao.value === respostasCorretas[pergunta]) {
+                        pontos++
+                    }
+                });
+            }
+
+            resultado.textContent = `Você acertou ${pontos} de 5 perguntas!`;
+
+            if (pontos === 5){
+                resultado.style.color = "green";
+            } else {
+                resultado.style.color = "red";
+            }
+
+        });
+
+        function limparQuestionario() {
+            document.querySelectorAll("label").forEach(label => {
+                label.classList.remove("correta", "errada");
+            });
+
+            document.querySelectorAll(`input[type="radio"]`).forEach(input => {
+                input.checked = false;
+            });
+
+            resultado.textContent = "";
+        }
+
+        const btnCancelar = document.getElementById("cancelar");
+
+        btnCancelar.addEventListener("click", function(){
+            limparQuestionario();
+        });
+    </script>
+</body>
+</html>

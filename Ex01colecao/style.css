@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+.cards{
+    display: grid;
+    gap: 3%;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    height: 200px; 
+    object-fit: cover;
+    border: 2px solid #000;
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 8px;
+    height: 40px;
+    line-height: 40px;
+    font-family: var(--font-title, Arial, sans-serif);
+    color: #77430f;
+}
+
+body {
+    background-color: #f5efdc;
+    font-family: var(--font-base,arial, sans-serif);
+
+}
+
+.page-carros {
+    background-image: url(imagens/garagem.JPG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-classicos {
+    background-image: url(imagens/fundo-classicos.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-trucks {
+    background-image: url(imagens/fundo-trucks.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-index {
+    background-image: url(imagens/fundo-home.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-instrumentos {
+    background-image: url(imagens/studio.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.page-sports {
+    background-image: url(imagens/fundo-sports.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-sedans {
+    background-image: url(imagens/fundo-sedans.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    --font-base: 'Quicksand';
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255,255,255,0.5);
+    z-index: -1;
+}
+/* h1 {
+    color: #442403;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+
+}
+
+p {
+    text-align: center;
+    color: #442403;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 1.3em;
+} */
+
+.card.sedan{
+    --font-title: Quicksand, sans-serif ;
+}
+
+.card.truck {
+    --font-title: Oswald, sans-serif;
+}
+
+.card.sport {
+    --font-title: teko;
+}
+
+.card.classico {
+    --font-title: 'Kaushan Script';  
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.barra.superior{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.retorno img{
+    width:40px;
+    height: auto;
+    cursor: pointer;
+}
+
+.categorias img{
+    width: 300px;
+}
+
+.categorias ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+}
+
+.categoria-card {
+    position: relative;
+    display: block;
+    width: 300px;
+    height: 200px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.categoria-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid #000;
+}
+
+.categoria-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(0,0,0,0.35);
+}
+
+.categorias-texto {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #e4be99;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.vitrine {
+    width: 200px;
+    margin-top: 70px;
+}
+
+.vitrine img {
+    width: 100%;
+    display: block;
+    height: 200px; 
+    object-fit: cover;
+    border: 2px solid #000;
+}
+
+.vitrine p {
+    font-size: 0.9em;
+    color: rgb(1, 7, 12);
+}
+
+.Exibição {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}

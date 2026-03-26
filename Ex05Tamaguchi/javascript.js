@@ -21,14 +21,28 @@ const bnt = document.getElementById("btn");
         
         console.log("Tempo:", contador);
         
-        if(contador == 30){
+        if(contador === 30){
             img.src = estados.alimentado
         }
         
-        if(contador == 60){
+        if(contador === 60){
             img.src = estados.bravo
         }
     }, 1000)
-};
+}
+
+function alimentar(){
+    img.src = estados.alimentado
+    contador = 0;
+    console.log("Comendo");
+
+    if(time_click) clearInterval(time_click)
+        time_click = setTimeout(() => {
+            img.src = estados.normal;
+            time_out = setTimeout(() => {
+                img.src = estados.bravo;
+            }, 2000);
+    },1000);
+}
 
 initConta();

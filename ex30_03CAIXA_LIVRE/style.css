@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    color: #C5A059;
+    background-color: #F5F2ED;
+}
+header {
+    padding: 10px;
+}
+header > h1 {
+    border: 1px solid #D4AF37;
+    text-align: center;
+    padding: 5px;
+    width: 90%;
+    margin: auto;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #610B10;
+    
+}
+
+div#grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+    grid-template-rows: repeat(10, 50px);
+    gap: 10px;
+    padding: 10px;
+}
+
+section#sua_compra {
+    border: 1px solid #D4AF37;
+    padding: 5px;
+    grid-row: span 5;
+    background-color: #3D2B1F;
+    border-radius: 5px;
+}
+
+section#sua_compra > h2 {
+    border-bottom: 1px solid #D4AF37;
+}
+
+.card {
+    border: 1px solid #D4AF37;
+    grid-row: span 1;
+    display: flex;
+    background-color: #63412C;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.card input {
+    background-color: #F5F2ED;
+    border: 1px solid #D4AF37;
+    color: #3D2B1F;
+    border-radius: 3px;
+    height: 25px;
+    width: 60%;
+    padding: 0 5px;
+}
+
+footer {
+    border: 1px solid #D4AF37;
+    padding: 5px;
+    width: 98%;
+    margin: auto;
+    border-radius: 5px;
+    color: #63412C;
+}
+
+footer span {
+    padding: 0 15.5% 0 11.5%;
+}
+
+p#marca{
+    text-align: center;
+}

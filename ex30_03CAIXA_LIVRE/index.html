@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Livre</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <h1>CAIXA LIVRE</h1>
+    </header>
+
+    <div id="grid">
+        <section id="sua_compra">
+            <h2>SUA COMPRA</h2>
+            <p class="lista_compra">Exemplo</p>
+        </section>
+
+        <section id="valor_total" class="card">
+            <label for="valor_total" id="total"> Valor total:</label>
+            <span id="total">0.00</span>
+        </section>
+
+        <section id="cod_barras" class="card">
+            <label for="cod_barras" id="codigo" class="in_card">Código de barras: </label>  
+            <input type="text">
+         </section>
+
+        <section id="valor_un" class="card">
+            <label for="valor_un">Valor unidade:</label>
+            <input type="text" id="valor_unidade" class="in_card">
+        </section>
+
+        <section id="quantidade" class="card">
+            <label for="quantidade">Quantidade:</label>
+            <input type="text" id="qnt" class="in_card">
+        </section>
+
+        <section id="valor_sub" class="card">
+            <label for="valor_sub">Sub total:</label>
+            <input type="text" id="sub_total" class="in_card">
+        </section>
+
+    </div>
+    
+    <footer>
+        <p><span>Loja do Felipe</span>            <span>Local:Maringá</span>         <span>30/0320:07</span></p>
+        <p id="marca"> FNS sistemas</p>
+    </footer>
+</body>
+<script src="javascript.js"></script>
+</html>

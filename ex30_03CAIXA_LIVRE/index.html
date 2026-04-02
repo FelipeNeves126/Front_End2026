@@ -15,7 +15,8 @@
     <div id="grid">
         <section id="sua_compra">
             <h2>SUA COMPRA</h2>
-            <p class="lista_compra">Exemplo</p>
+            <ul id="lista">
+            </ul>
         </section>
 
         <section id="valor_total" class="card">
@@ -25,24 +26,25 @@
 
         <section id="cod_barras" class="card">
             <label for="cod_barras" id="codigo" class="in_card">Código de barras: </label>  
-            <input type="text">
+            <input type="text" id="cod">
          </section>
 
-        <section id="valor_un" class="card">
+        <!-- <section id="valor_un" class="card">
             <label for="valor_un">Valor unidade:</label>
             <input type="text" id="valor_unidade" class="in_card">
-        </section>
+        </section> -->
 
         <section id="quantidade" class="card">
             <label for="quantidade">Quantidade:</label>
             <input type="text" id="qnt" class="in_card">
         </section>
 
-        <section id="valor_sub" class="card">
+        <!-- <section id="valor_sub" class="card">
             <label for="valor_sub">Sub total:</label>
             <input type="text" id="sub_total" class="in_card">
-        </section>
+        </section> -->
 
+        <button type="button" onclick="addProduto()"">Enviar</button>
     </div>
     
     <footer>

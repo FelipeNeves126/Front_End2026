@@ -64,3 +64,13 @@ button {
 button p {
     padding: 5px;
 }
+
+.tabela-imagem {
+    display: block;              
+    max-width: 500px;            
+    width: 100%;               
+    margin: 20px auto;           
+    border: 1px solid antiquewhite; 
+    border-radius: 5px;          
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.418); 
+}

@@ -32,6 +32,8 @@ li {
 
 li.completed {
     text-decoration: line-through;
+    color: rgb(168, 226, 168);
+    background-color: rgba(3, 27, 3, 0.507);
 }
 
 button {

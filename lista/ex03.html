@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+    <style>
+        label {
+            display: block;
+        }
+
+        button#checkStatus{
+            display: block;
+            padding: 4px;
+            margin-top: 9px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Cálculo de Média por Aluno</legend>
+
+        <label for="iNome">Nome: </label>
+        <input type="text" name="Nome" id="iNome">
+
+        <label for="iNota1">Nota 1º Trimestre: </label>
+        <input type="number" name="Nota1" id="iNota1" step="0.1">
+        
+        <label for="iNota2">Nota 2º Trimestre: </label>
+        <input type="number" name="Nota2" id="iNota2" step="0.1">
+        
+        <label for="iNota3">Nota 3º Trimestre: </label>
+        <input type="number" name="Nota3" id="iNota3" step="0.1">
+        
+        <button onclick="calcularStatus()" id="checkStatus">Verificar situação do Aluno</button>
+
+        <span id="result"></span>
+    </fieldset>
+
+    <script>
+        function calcularStatus(){
+            const nota1 = Number(document.getElementById('iNota1').value);
+            const nota2 = Number(document.getElementById('iNota2').value);
+            const nota3 = Number(document.getElementById('iNota3').value);
+
+            const result = document.getElementById('result');
+            result.innerHTML = "";
+
+            const media = (nota1 + nota2 + nota3)/3;
+            const falta = 70-media;
+            if(media<40){
+                result.innerHTML = `<p style="color: red">REPROVADO!</p>`
+            }
+            else if(media>=40 && media <70){
+                result.innerHTML =`<p style="color: green">EXAME! Nota necessária para aprovação: ${falta.toFixed(2)}`
+            }
+            else {
+                result.innerHTML = `<p style="color: blue">APROVADO!<p>`
+            }
+        }
+    </script>
+</body>
+</html>

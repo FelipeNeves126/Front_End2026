@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+    <style>
+        header {
+            text-align: center;
+        }
+
+        
+        select:invalid {
+            color: #888;
+        }
+
+        select option {
+            color: black;
+        }
+        section {
+            padding: 20px;
+            margin: 10px;
+            background-color: rgba(101, 101, 219, 0.568);
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        button{
+            background-color: rgba(161, 78, 78, 0.253);
+            width: 100px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(101, 101, 219, 0.568);
+            color: rgb(0, 0, 0);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>INFINITY BANK</h1>
+        <h2>Simplificando sua vida</h2>
+    </header>
+
+    <section id="selectBandeira">
+        <label for="iBandeira">Informe a bandeira do seu cartao:</label>
+        <select name="bandeira" id="iBandeira" required>
+            <option value="" disabled selected hidden>Selecione uma opcao</option>
+            <option value="Visa">Visa</option>
+            <option value="Master">Mastercard</option>
+            <option value="Elo">Elo</option>
+        </select>
+    </section>
+    <section id="valorCompra">
+        <label for="iValor">Informe o valor da compra:</label>
+        <input type="number" id="iValor" step="0.1" min="0">
+    </section>
+
+    <section id="quantParcelas">
+        <label for="iParcelas">Informe a quantidade de parcelas: </label>
+        <input type="number" id="iParcelas" min="1" max="12">
+    </section>
+
+    <button id="calcular" onclick="calcularValores()">Calcular Valores</button>
+
+    <span id="iResultado"></span>
+
+    <script>
+        function calcularValores(){
+            var taxa;
+    
+            const valor = document.getElementById('iValor').value;
+            const parcelas = document.getElementById('iParcelas').value;
+
+            const bandeira = document.getElementById('iBandeira').value;
+
+            switch(bandeira){
+                case 'Visa':    
+                   taxa = 0.02;
+                   break;
+                case 'Master':
+                    taxa = 0.0185;
+                    break;
+                case 'Elo':
+                    taxa = 0.03;
+                    break;
+            }
+
+            var taxaBandeira = valor*taxa;
+            var jurosTotais = valor*(0.0035*parcelas);
+            var valorTotal = Number(valor) + Number(taxaBandeira) + Number(jurosTotais);
+
+            const resultado = document.getElementById('iResultado');
+
+            resultado.innerHTML = `<section>
+                    <p>Valor da taxa: ${taxaBandeira}<br>
+                       Valor dos juros: ${jurosTotais}<br>
+                       Valor por parcela: ${valorTotal/parcelas} </p>
+                </section>`
+        }
+    </script>
+</body>
+</html>

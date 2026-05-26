@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            border: 1px solid black;
+            width: 30rem;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            justify-content: center;
+        }
+    div:hover{
+        background-color: green;
+        color: red;
+        cursor: pointer;
+
+    }
+
+    .roxo {
+        background-color: blueviolet;
+    }
+    .branco{
+        background-color: white;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="card" onclick="baterMicael()">
+        <h1>Henrique ama Micael</h1>
+        <span id="acao"></span>
+    </div>
+    <script>
+        let boola = true;
+        function baterMicael(){
+            
+            const card = document.getElementById('card');
+            if (boola===true){
+                card.classList.remove('branco');
+                card.classList.add('roxo');
+                boola=false;
+                }
+            else {
+                card.classList.remove('roxo');
+                card.classList.add('branco');
+                boola=true;
+            }
+
+        }
+    </script>
+</body>
+</html>

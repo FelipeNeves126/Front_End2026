@@ -37,6 +37,9 @@
             color: rgb(0, 0, 0);
             transition: 0.3s;
         }
+        body{
+            background-color: purple;
+        }
     </style>
 </head>
 <body>
@@ -96,9 +99,9 @@
             const resultado = document.getElementById('iResultado');
 
             resultado.innerHTML = `<section>
-                    <p>Valor da taxa: ${taxaBandeira}<br>
-                       Valor dos juros: ${jurosTotais}<br>
-                       Valor por parcela: ${valorTotal/parcelas} </p>
+                    <p>Valor da taxa: ${taxaBandeira.toFixed(2)}<br>
+                       Valor dos juros: ${jurosTotais.toFixed(2)}<br>
+                       Valor por parcela: ${(valorTotal/parcelas).toFixed(2)} </p>
                 </section>`
         }
     </script>

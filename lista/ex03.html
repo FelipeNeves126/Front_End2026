@@ -42,20 +42,22 @@
             const nota1 = Number(document.getElementById('iNota1').value);
             const nota2 = Number(document.getElementById('iNota2').value);
             const nota3 = Number(document.getElementById('iNota3').value);
-
+            const nome  = document.getElementById('iNome').value;
             const result = document.getElementById('result');
             result.innerHTML = "";
+            
 
             const media = (nota1 + nota2 + nota3)/3;
             const falta = 70-media;
+            
             if(media<40){
-                result.innerHTML = `<p style="color: red">REPROVADO!</p>`
+                result.innerHTML = `<p style="color: red">${nome}: REPROVADO!</p>`
             }
             else if(media>=40 && media <70){
-                result.innerHTML =`<p style="color: green">EXAME! Nota necessária para aprovação: ${falta.toFixed(2)}`
+                result.innerHTML = `<p style="color: green">${nome}: EXAME! Nota necessária para aprovação: ${falta.toFixed(2)}`
             }
             else {
-                result.innerHTML = `<p style="color: blue">APROVADO!<p>`
+                result.innerHTML = `<p style="color: blue">${nome}: APROVADO!<p>`
             }
         }
     </script>

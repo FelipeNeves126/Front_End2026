@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        fieldset {
+            display: inline-block;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Verificador INFINITY Bank</h1></header>
+    <fieldset>
+        <legend>Verificador de cartão</legend>
+        <label for="nCard">Informe o número do seu cartão:</label>
+        <input type="text" id="nCard" required minlength="13" maxlength="16" placeholder="apenas números ou com espaços">
+        <button id="Verificador" onclick="verificar()">Consultar validade do cartão</button>
+    </fieldset>
+    <section id="result"></section>
+
+    <script>
+       const inputElemento = document.getElementById('nCard');
+
+        inputElemento.addEventListener('keydown', function(event){
+            if(event.key === 'Enter'){
+                verificar()
+            }
+
+    })
+
+       
+        function verificar(){
+            const inputBruto = document.getElementById('nCard').value;
+            let valido = false;
+
+            
+
+            const numInserido = inputBruto.replace(/\D/g,'');
+            const result = document.getElementById('result');
+        
+
+            let somaTotal = 0;
+            let numInvertido = numInserido.split('').reverse();
+           
+
+            for(let i=0;i<numInvertido.length;i++){
+
+                let digito = parseInt(numInvertido[i]);
+
+
+                if(i % 2 !==0){
+                    let temp = digito * 2;
+                    if(temp > 9){
+                        temp-=9;
+                    }
+                    somaTotal += temp;
+                }else {
+                    somaTotal += digito;
+                }
+            }
+
+            if(somaTotal%10===0){
+                valido = true;
+            }
+
+            if(valido){
+                let primeiroDigito = numInserido.charAt(0);
+                let setor = "Desconhecido";
+
+                if (primeiroDigito === '1' || primeiroDigito === '2') setor = "Companhias Aéreas";
+                else if (primeiroDigito === '3') setor = "Viagens e Entretenimento";
+                else if (primeiroDigito === '4' || primeiroDigito === '5') setor = "Instituições Financeiras e Bancárias";
+                else if (primeiroDigito === '6') setor = "Merchandising e Finanças";
+                else if (primeiroDigito === '7') setor = "Petróleo e Energia";
+                else if (primeiroDigito === '8') setor = "Telecomunicações e Saúde";
+                else if (primeiroDigito === '9') setor = "Atribuição Nacional";
+                
+                let bandeira = "Outra / Desconhecida";
+                
+                if (numInserido.startsWith('4')) bandeira = "Visa";
+                else if (numInserido.startsWith('51') || numInserido.startsWith('52') || 
+                numInserido.startsWith('53') || numInserido.startsWith('54') || 
+                numInserido.startsWith('55')) bandeira = "Mastercard";
+                else if (numInserido.startsWith('34') || numInserido.startsWith('37')) bandeira = "American Express";
+                else if (numInserido.startsWith('6011') || numInserido.startsWith('65')) bandeira = "Discover";
+                
+                result.innerHTML = `
+                <h3>Cartão VÁLIDO</h3>
+                <h3>Painel de Informações</h3>
+                <div class="info-row"><strong>Bandeira:</strong> ${bandeira}</div>
+                <div class="info-row"><strong>Categoria de Setor:</strong> ${setor}</div>
+                <div class="info-row"><strong>Banco Emissor:</strong> <span style="font-size: 13px; color: #7f8c8d;">(Requer integração com API de BIN)</span></div>
+                `;
+            }else {
+                result.innerHTML = `
+                    <h3>Cartão INVALIDO</h3>
+                `
+            }
+        }
+    </script>
+
+</body>
+</html>

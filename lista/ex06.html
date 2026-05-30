@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+    <style>
+        label {
+            padding: 20px;
+        }
+
+        fieldset {
+            display: inline-block;
+            background-color: rgba(139, 70, 70, 0.575);
+            border: 1px solid brown;
+            border-radius: 6px;
+        }
+
+        button {
+            border-radius: 6px;
+            background-color: rgba(102, 75, 75, 0.336);
+            transform: 0.3s;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: brown;
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EVENTOS</h1>
+        <h3>Facilitador para seu evento</h3>
+    </header>
+
+    <section>
+        <fieldset>
+            <label for="iPacote">Selecione o pacote:</label>
+            <select name="pacotes" id="iPacote" required>
+                <option value="Standart">Standart</option>
+                <option value="Premium">Premium</option>
+                <option value="InfinityDeluxe">Infinity Deluxe</option>
+            </select>
+        </fieldset>
+        
+        <fieldset>
+            <label for="iPessoas">Quantidade de pessoas:</label>
+            <input type="number" name="quantPessoas" id="iPessoas" required>
+        </fieldset>
+
+        <button onclick="calcular()">Calcular orçamento</button>
+
+        <section id="cardOrc"></section>
+    </section>
+
+    <script>
+        const entrPacote = document.getElementById('iPacote');
+        const entrPessoas = document.getElementById('iPessoas');
+        const card = document.getElementById('cardOrc');
+        
+
+        function calcular(){
+            const pacote = entrPacote.value; 
+            const pessoas = Number(entrPessoas.value);
+            let valor;
+            switch(pacote){
+                case 'Standart':
+                    valor = 50;
+                    break;
+                case 'Premium':
+                    valor = 80;
+                    break;
+                case 'InfinityDeluxe':
+                    valor = 120;  
+                    break;         
+            }
+            
+        let valorFinal = Number(valor)*pessoas;
+        let valorTaxa = valorFinal*0.1;
+        let porcentagemDesconto = 0;
+        valorDesc = 0;
+        valorFinal += valorTaxa;
+
+        if(pessoas>100){
+            let porcentagemDesconto = 0.05;
+            valorDesc = valorFinal * porcentagemDesconto;
+
+        }
+
+        valorFinal = valorFinal- valorDesc;
+        
+        
+        
+        card.innerHTML = `
+        <p>Valor por pessoa: R$${valor.toFixed(2)}</p>
+        <p>Taxa aplicada: R$${valorTaxa.toFixed(2)}</p>
+        <p>Desconto aplicado: R$${valorDesc.toFixed(2)}</p>
+        <p>VALOR FINAL: R$${valorFinal.toFixed(2)}</p>
+        `;
+        
+    }
+        </script>
+</body>
+</html>

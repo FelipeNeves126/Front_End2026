@@ -4,6 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 5</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom, rgba(37, 112, 37, 0.692), rgba(25, 59, 25, 0.322));
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        header {
+            background-color: purple;
+            color: white;
+            width: 90vw;
+            margin: auto;
+            border-radius: 5px;
+        }
+
+        header h1 {
+            padding: 10px ;
+            margin-bottom: -20px;
+            text-align: center;
+        }
+
+        header h3 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            color: gold;
+        }   
+
+        fieldset {
+            display: inline-block;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .complete {
+            text-decoration: line-through;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -11,10 +54,62 @@
         <h3>Lista de convidados VIP</h3>
     </header>
 
+    <fieldset>
+        <label for="iConvidado">Nome do convidado:</label>
+        <input type="text" name="convidado" id="iConvidado" required>
+
+        <button onclick="addConvidado()">Adicionar</button>
+    </fieldset>
+
     <section id="cardLista1">
         <h3>Lista de convidados</h3>
-        
+        <ul id="listaConvidados"></ul>
     </section>
 
+    <script>
+        const convidado = document.getElementById('iConvidado');
+        const lista = document.getElementById('listaConvidados');
+
+        convidado.addEventListener('keydown', function(event){
+            if(event.key === 'Enter'){
+                addConvidado();
+            }
+        });
+        function addConvidado(){
+           const convVIP = convidado.value.trim();
+           const newGuest = document.createElement('li');
+
+           newGuest.innerHTML = `
+           <span>${convVIP}</span><br>
+           <button onclick="regEntrada(this)">Entrada</button>
+           <button onclick="edit(this)">Editar</button>
+           <button onclick="cancelar(this)">Cancelar</button>
+           `;
+           lista.appendChild(newGuest);
+           convidado.value='';
+            
+        }
+
+        function regEntrada(button){
+            const regEntrada = button.parentElement;
+            regEntrada.classList.add('complete');
+        }
+
+        function cancelar(button){
+            const cancelar = button.parentElement;
+            lista.removeChild(cancelar);
+        }
+
+        function edit(button){
+            const elementoLi = button.parentElement;
+            const nomeConvidado = elementoLi.firstElementChild;
+
+            const novoNome = prompt("Insira os ajustes desejados: ", nomeConvidado.textContent);
+
+            if(novoNome !== null && novoNome.trim()!== ""){
+                nomeConvidado.textContent = novoNome.trim();
+            }
+        }
+    </script>
 </body>
 </html>
